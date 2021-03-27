@@ -28,15 +28,16 @@ const mapDispatchToProps = (dispatch) => {
 
 class App extends Component {
 
-     /* //redux
+      //redux don need constructor 
+      /*
       constructor() {
         super()
         this.state = {
             robots: [],
-            searchfield: ''
+            //searchfield: ''
         }
-    } 
-    */
+      } 
+      */
 
 
     // const [robots, setRobots] = useState([])
@@ -70,12 +71,14 @@ class App extends Component {
       */
 
     render() {
-        const { robots } = this.state;
-        const { searchField, onSearchChange } = this.props;
+        //const { robots } = this.state;
+        const {  searchField, onSearchChange, robots, isPending} = this.props;
         const filteredRobots = robots.filter(robot =>{
           return robot.name.toLowerCase().includes(searchField.toLowerCase());
         })
-        return !robots.length ?
+        //return !robots.length ?
+        //redux---
+        return isPending?
           <h1>Loading</h1> :
           (
             <div className='tc'>
