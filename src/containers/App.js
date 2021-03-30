@@ -91,7 +91,7 @@ class App extends Component {
           );
       }
     }
-    //redux clear 
+    //redux clear the comments
     // render() {
     //     const { robots, searchfield } = this.state;
     //     const filteredRobots = robots.filter(robot => {
